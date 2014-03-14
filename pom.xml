@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.eversmann.framework.dd</groupId>
+	<artifactId>dd</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Data and Domain Framework</name>
+	<modules>
+		<module>dd-core</module>
+	</modules>
+	<scm>
+		<url>https://github.com/deversmann/DDFramework</url>
+		<connection>scm:git:https://github.com/deversmann/DDFramework.git</connection>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>eversmann.com</id>
+			<name>eversmann.com repository</name>
+			<url>sftp://eversmann.com/home/content/e/v/e/eversmann/html/maven</url>
+		</repository>
+	</distributionManagement>
+</project>
