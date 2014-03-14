@@ -9,13 +9,6 @@
 	<artifactId>dd-core</artifactId>
 	<name>Data and Domain Framework Core</name>
 	<description>Core libraries for building out a data and domain model.</description>
-	<repositories>
-		<repository>
-			<id>java.net</id>
-			<name>java.net Maven 2 Repository</name>
-			<url>http://download.java.net/maven/2/</url>
-		</repository>
-	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -55,17 +48,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<github.global.server>github</github.global.server>
 	</properties>
 
 	<build>
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ssh</artifactId>
-				<version>2.4</version>
-			</extension>
-		</extensions>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -114,25 +99,6 @@
 					</links>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.8</version>
-				<configuration>
-					<message>Creating site for ${project.version}</message>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
-			</plugin>
-
-
 		</plugins>
 
 	</build>

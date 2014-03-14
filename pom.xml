@@ -10,6 +10,9 @@
 		<module>dd-core</module>
 		<module>dd-template</module>
 	</modules>
+	<properties>
+		<github.global.server>github</github.global.server>
+	</properties>
 	<scm>
 		<url>https://github.com/deversmann/DDFramework</url>
 		<connection>scm:git:https://github.com/deversmann/DDFramework.git</connection>
@@ -20,5 +23,62 @@
 			<name>eversmann.com repository</name>
 			<url>sftp://eversmann.com/home/content/e/v/e/eversmann/html/maven</url>
 		</repository>
+		<site>
+			<id>github-pages-site</id>
+			<name>Deployment through GitHub's site deployment plugin</name>
+			<url>site/${project.version}</url>
+		</site>
 	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<name>java.net Maven 2 Repository</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+	</repositories>
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.4</version>
+			</extension>
+		</extensions>
+		<plugins>
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.1</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.doxia</groupId>
+						<artifactId>doxia-module-markdown</artifactId>
+						<version>1.5</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<skipDeploy>true</skipDeploy>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<message>Creating site for ${project.artifactId}, ${project.version}</message>
+					<path>${project.distributionManagement.site.url}</path>
+					<merge>true</merge>
+					<server>github</server>
+				</configuration>
+				<executions>
+					<execution>
+						<id>github-site</id>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site-deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>	
 </project>
