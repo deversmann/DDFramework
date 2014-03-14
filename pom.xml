@@ -8,6 +8,7 @@
 	<name>Data and Domain Framework</name>
 	<modules>
 		<module>dd-core</module>
+		<module>dd-template</module>
 	</modules>
 	<scm>
 		<url>https://github.com/deversmann/DDFramework</url>

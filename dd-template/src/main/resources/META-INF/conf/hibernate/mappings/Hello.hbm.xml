@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.eversmann.framework.dd.template.domain">
+	<class name="Hello" table="HELLO">
+		<id name="id" column="ID" type="long">
+			<generator class="native" />
+		</id>
+        <version name="version" column="VERSION" type="integer" />
+		<property name="name" column="NAME" type="string" />
+		<property name="created" column="CREATED" type="timestamp" />
+		<property name="modified" column="MODIFIED" type="timestamp" />
+	</class>
+</hibernate-mapping>
